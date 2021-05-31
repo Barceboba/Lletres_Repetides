@@ -18,24 +18,62 @@
   <div class="container">
     <!-- Content here -->
 
-    <h3 class="text-secondary d-flex justify-content-center bg-primary">Crea una interfície gràfica amb botons que
-      executi cadascun dels 5 exercicis anteriors.</h3>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="" aria-label="Escriure un nom aquí, sis plau." aria-describedby="basic-addon1" id="nom">
-        <div class="input-group-append">
-          <button class="btn btn-success" type="button" onclick="separaLletres()" id="vista" >Introduir un nom.</button>
-          <script>
-            function separaLletres() {
-              let captuNom = document.getElementById("nom").value;
-          let myWay = [...captuNom];
+    <h3 class="text-secondary d-flex justify-content-center bg-primary text-justify">Crea una interfície gràfica amb
+      botons que executi cadascun dels 5 exercicis anteriors.</h3>
+
+    <div class="alert alert-warning" role="alert">Exercici 1.</div>
+    <div class="input-group">
+
+      <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
+        aria-describedby="basic-addon1" id="nom">
+      <div class="input-group-append">
+        <button class="btn btn-success" type="button" onclick="separaLletres()" id="vista">Introduir un nom.</button>
+        <script>
+          function separaLletres() {
+            let captuNom = document.getElementById("nom").value;
+            let myWay = [...captuNom];
             for (let i = 0; i < myWay.length; i++) {
-            console.log(myWay[i]);
+              console.log(myWay[i]);
             }
-            document.getElementById("vista").innerHTML = "Les lletres que componen el nom són: " + myWay;
-            }</script>
-        </div>
+            document.getElementById("vista").innerHTML = "Les lletres que componen el nom són: " + myWay + ".";
+          }
+        </script>
       </div>
-      
+    </div><br>
+    <div class="alert alert-warning" role="alert">Exercici 2.</div>
+    <div class="input-group">
+
+      <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
+        aria-describedby="basic-addon1" id="nom2">
+      <div class="input-group-append">
+        <button class="btn btn-success" type="button" onclick="contaLletres()" id="vista2">Introduir un nom.</button>
+        <script>
+          function contaLletres() {
+            let captuNom = document.getElementById("nom2").value;
+            let myWay = captuNom.split(' ');;
+            let text = "";
+
+
+            for (let i = 0; i < myWay.length; i++) {
+              text += myWay[i];
+            }
+
+            for (i = 0; i < myWay.length; i++) {
+              if (myWay[i] == 'A' || myWay[i] == 'E' || myWay[i] == 'I' || myWay[i] == 'O' || myWay[i] == 'U') {
+                console.log('He trobat la VOCAL: ' + myWay[i]);
+              } else if (isNaN(myWay[i]) == false) {
+                console.log('Els noms de persones no contenen el número: ' + myWay[i]);
+              } else {
+                console.log('He trobat la CONSONTANT: ' + myWay[i]);
+              }
+
+            }
+            document.getElementById("vista2").innerHTML = "Quantitat de tipus de lletres trobades: " + text + ".";
+          }
+        </script>
+      </div>
+    </div>
+
   </div>
 
   <!-- Optional JavaScript; choose one of the two! -->
