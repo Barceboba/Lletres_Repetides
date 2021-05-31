@@ -21,7 +21,8 @@
     <h3 class="text-secondary d-flex justify-content-center bg-primary text-justify">Crea una interfície gràfica amb
       botons que executi cadascun dels 5 exercicis anteriors.</h3>
 
-    <div class="alert alert-warning" role="alert">Exercici 1.</div>
+    <div class="alert alert-warning" role="alert">Exercici 1. Crea un array amb el teu nom on cada posició correspongui a una lletra.
+      Fes un bucle que recorri aquest array i mostri per consola cadascuna de les lletres.</div>
     <div class="input-group">
 
       <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
@@ -35,22 +36,25 @@
             for (let i = 0; i < myWay.length; i++) {
               console.log(myWay[i]);
             }
-            document.getElementById("vista").innerHTML = "Les lletres que componen el nom són: " + myWay + ".";
+            document.getElementById("alNom").innerHTML = "Les lletres que componen el nom són: " + myWay + ".";
           }
         </script>
       </div>
     </div><br>
-    <div class="alert alert-warning" role="alert">Exercici 2.</div>
+    <div class="alert alert-warning" role="alert">Exercici 2. Al bucle, si la lletra és una vocal imprimeix a la consola: ‘He trobat la VOCAL: __’. Sinó, imprimeix: ‘He trobat la CONSONTANT: __’.
+      Si trobes un número, mostra per pantalla: ‘Els noms de persones no contenen el número: __’</div>
     <div class="input-group">
 
       <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
         aria-describedby="basic-addon1" id="nom2">
       <div class="input-group-append">
         <button class="btn btn-success" type="button" onclick="contaLletres()" id="vista2">Introduir un nom.</button>
+        
         <script>
           function contaLletres() {
-            let captuNom = document.getElementById("nom2").value;
-            let myWay = captuNom.split(' ');;
+            let captuNom = document.getElementById("nom2").value.toUpperCase();
+            
+            let myWay = [...captuNom];
             let text = "";
 
 
@@ -60,19 +64,40 @@
 
             for (i = 0; i < myWay.length; i++) {
               if (myWay[i] == 'A' || myWay[i] == 'E' || myWay[i] == 'I' || myWay[i] == 'O' || myWay[i] == 'U') {
-                console.log('He trobat la VOCAL: ' + myWay[i]);
+                document.getElementById("alVocal").innerHTML += ''+ myWay[i] + ", ";
               } else if (isNaN(myWay[i]) == false) {
-                console.log('Els noms de persones no contenen el número: ' + myWay[i]);
+                document.getElementById("noNum").innerHTML += '' + myWay[i] + ", ";
               } else {
-                console.log('He trobat la CONSONTANT: ' + myWay[i]);
+                document.getElementById("alCons").innerHTML += '' + myWay[i] + ", ";
               }
 
             }
-            document.getElementById("vista2").innerHTML = "Quantitat de tipus de lletres trobades: " + text + ".";
+            document.getElementById("alNom").innerHTML = "Partim del nom " + text + ".";
           }
         </script>
       </div>
-    </div>
+      
+    </div><br>
+    <blockquote class="blockquote">
+      <p class="mb-0 shadow-sm p-3 mb-5 bg-info rounded text-secondary" id="alNom">
+        Nom de sortida        
+      </p>
+    </blockquote>
+    <blockquote class="blockquote">
+      <p class="mb-0 shadow-sm p-3 mb-5 bg-info rounded text-secondary" id="alVocal">
+        He trobat les VOCALS: 
+      </p>
+    </blockquote>
+    <blockquote class="blockquote">
+      <p class="mb-0 shadow-sm p-3 mb-5 bg-info rounded text-secondary" id="noNum">
+        Els noms de persones no contenen el número: 
+      </p>
+    </blockquote>
+    <blockquote class="blockquote">
+      <p class="mb-0 shadow-sm p-3 mb-5 bg-info rounded text-secondary" id="alCons">
+        He trobat les CONSONTANTS: 
+      </p>
+    </blockquote>
 
   </div>
 

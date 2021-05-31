@@ -1,7 +1,8 @@
 let myWay = ['M', 'I', 'Q', 2, 4, 'U', 'E', 'L'];
 let text = "";
-let stringNom = 
+
 console.log("Partim del nom " + myWay.join(""));
+
 for (let i = 0; i < myWay.length; i++) {
     text += myWay[i];
 }
