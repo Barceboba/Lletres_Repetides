@@ -21,9 +21,10 @@
     <h3 class="text-secondary d-flex justify-content-center bg-primary text-justify">Crea una interfície gràfica amb
       botons que executi cadascun dels 5 exercicis anteriors.</h3><br>
 
-    <div class="alert alert-warning" role="alert">Exercici 1. Crea un array amb el teu nom on cada posició correspongui
-      a una lletra.
-      Fes un bucle que recorri aquest array i mostri per consola cadascuna de les lletres.
+    <div class="alert alert-warning" role="alert">
+      <p>Exercici 1.<br> Crea un array amb el teu nom on cada posició correspongui
+        a una lletra.
+        Fes un bucle que recorri aquest array i mostri per consola cadascuna de les lletres.</p><br>
       <div class="input-group">
 
         <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
@@ -43,9 +44,10 @@
         </div>
       </div>
     </div><br><br>
-    <div class="alert alert-warning" role="alert">Exercici 2. Al bucle, si la lletra és una vocal imprimeix a la
-      consola: ‘He trobat la VOCAL: __’. Sinó, imprimeix: ‘He trobat la CONSONTANT: __’.
-      Si trobes un número, mostra per pantalla: ‘Els noms de persones no contenen el número: __’.
+    <div class="alert alert-warning" role="alert">
+      <p>Exercici 2.<br> Al bucle, si la lletra és una vocal imprimeix a la
+        consola: ‘He trobat la VOCAL: __’. Sinó, imprimeix: ‘He trobat la CONSONTANT: __’.
+        Si trobes un número, mostra per pantalla: ‘Els noms de persones no contenen el número: __’.</p><br>
       <div class="input-group">
 
         <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
@@ -103,8 +105,9 @@
       </blockquote>
     </div>
 
-    <div class="alert alert-warning" role="alert">Exercici 3. Emmagatzemar en un Map les lletres de l'array y el nombre
-      de vegades que apareixen.
+    <div class="alert alert-warning" role="alert">
+      <p>Exercici 3.<br>Emmagatzemar en un Map les lletres de l'array y el nombre
+        de vegades que apareixen.</p><br>
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
           aria-describedby="basic-addon1" id="nom3">
@@ -146,10 +149,12 @@
       </blockquote>
     </div>
 
-    <div class="alert alert-warning" role="alert">Crea una altra array amb el teu cognom on cada posició correspongui a
-      una lletra.
-      Fusiona els dos arrays en un. A més, afegeix una posició amb un espai buit entre la primera i la segona. És a dir,
-      partim de 'array name i surname i al acabar l’execució només tindrem una que es dirà fullName.
+    <div class="alert alert-warning" role="alert">
+      <p>Exercici 4.<br>Crea un altra array amb el teu cognom on cada posició correspongui a
+        una lletra.
+        Fusiona els dos arrays en un. A més, afegeix una posició amb un espai buit entre la primera i la segona. És a
+        dir,
+        partim de 'array name i surname i al acabar l’execució només tindrem una que es dirà fullName.</p><br>
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Escriure un nom aquí, sis plau." aria-label=""
           aria-describedby="basic-addon1" id="nom4">
@@ -173,35 +178,65 @@
         function fussArray() {
           let name = document.getElementById("nom4").value.toUpperCase();
 
-            surname = document.getElementById("nom5").value.toUpperCase(),
+          surname = document.getElementById("nom5").value.toUpperCase(),
             fullName = name.concat([' '], surname);
 
           console.log(fullName);
 
-          document.getElementById("concaten").innerHTML ="Nom i cognom: " + fullName + ".";
-
-
-
-
+          document.getElementById("concaten").innerHTML = "Nom i cognom: " + fullName + ".";
         }
       </script>
     </div>
+    <div>
+      <div class="alert alert-warning" role="alert">
+        <p>Nivell 2.<br>Crea una funció que retorni un array amb tots els email (sense repetir) del següent text:</p>
+        <br>
+        <form>
+          <div class="form-group">
+
+            <textarea class="form-control" id="tirallonga" rows="3" placeholder="Escriu la tirallonga."></textarea>
+          </div>
+        </form><br>
+        <div class="input-group-append d-flex justify-content-center">
+          <button class="btn btn-success" type="button" onclick="buscaMail()" id="vista5">Trobar adreces de correu
+            electrònic.</button>
+        </div><br>
+        <blockquote class="blockquote">
+          <p class="shadow-sm p-2 mb-5 bg-info rounded text-secondary" id="concaten">
+            Les adreces trobades són:
+          </p>
+        </blockquote>
+        <script>
+          let Str = document.getElementById("concaten").value;
+
+          let mails = /\w*-?\w*-[a-z]+@[a-z-]+(\w...)\.([a-zA-Z]+)/g;
+          let trobat = Str.match(mails);
+
+          function buscaMail() {
+            return trobat.slice(0, 3);
+          }
 
 
-  </div>
+          console.log(buscaMail());
+        </script>
 
-  <!-- Optional JavaScript; choose one of the two! -->
+      </div>
 
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-  </script>
 
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
