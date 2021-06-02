@@ -202,22 +202,46 @@
             electrònic.</button>
         </div><br>
         <blockquote class="blockquote">
-          <p class="shadow-sm p-2 mb-5 bg-info rounded text-secondary" id="concaten">
+          <p class="shadow-sm p-2 mb-5 bg-info rounded text-secondary" id="correus">
             Les adreces trobades són:
           </p>
         </blockquote>
         <script>
-          let Str = document.getElementById("concaten").value;
-
-          let mails = /\w*-?\w*-[a-z]+@[a-z-]+(\w...)\.([a-zA-Z]+)/g;
-          let trobat = Str.match(mails);
-
           function buscaMail() {
-            return trobat.slice(0, 3);
+
+            document.getElementById("concaten").value = '';
+            let Str = document.getElementById('tirallonga').value;
+            let mails = /\w*-?\w*-[a-z]+@[a-z-]+(\w...)\.([a-zA-Z]+)/g;
+            let mailTrobat = [];
+            let trobat = Str.match(mails);
+            if (trobat) {
+              mailTrobat = trobat.sort();
+            } else if (trobat === null) {
+              document.getElementById("correus").innerHTML += "No hi ha cap adreça electrònica al text introduït.";
+            };
+
+            let senseRepes = [];
+            if (mailTrobat) {
+              for (let i = 0; i < mailTrobat.length; i++) {
+                if (mailTrobat[i + 1] != mailTrobat[i]) {
+                  senseRepes.push(mailTrobat[i]);
+                } else if (mailTrobat === null) {
+                  document.getElementById("correus").innerHTML += "No hi ha cap adreça electrònica al text introduït.";
+                }
+              }
+            };
+
+
+
+            // return trobat.slice(0, 3);
+            senseRepes.reverse()
+            for (const trobat of senseRepes) {
+              document.getElementById("correus").innerHTML += trobat + ' <br>';
+
+            }
+
+            //console.log(buscaMail());
           }
-
-
-          console.log(buscaMail());
         </script>
 
       </div>
