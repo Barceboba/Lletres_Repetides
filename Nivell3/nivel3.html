@@ -21,6 +21,7 @@
     <h3 class="text-secondary d-flex justify-content-center bg-primary text-justify">Crea una interfície gràfica amb
       botons que executi cadascun dels 5 exercicis anteriors.</h3><br>
 
+<!--Exercici 1-->
     <div class="alert alert-warning" role="alert">
       <p>Exercici 1.<br> Crea un array amb el teu nom on cada posició correspongui
         a una lletra.
@@ -44,6 +45,8 @@
         </div>
       </div>
     </div><br><br>
+    
+    <!--Exercici 2-->
     <div class="alert alert-warning" role="alert">
       <p>Exercici 2.<br> Al bucle, si la lletra és una vocal imprimeix a la
         consola: ‘He trobat la VOCAL: __’. Sinó, imprimeix: ‘He trobat la CONSONTANT: __’.
@@ -75,7 +78,6 @@
                 } else {
                   document.getElementById("alCons").innerHTML += '' + myWay[i] + ", ";
                 }
-
               }
               document.getElementById("alNom").innerHTML = "Partim del nom " + text + ".";
             }
@@ -105,6 +107,7 @@
       </blockquote>
     </div>
 
+    <!--Exercic 3-->
     <div class="alert alert-warning" role="alert">
       <p>Exercici 3.<br>Emmagatzemar en un Map les lletres de l'array y el nombre
         de vegades que apareixen.</p><br>
@@ -143,12 +146,13 @@
         }
       </script><br>
       <blockquote class="blockquote">
-        <p class="shadow-sm p-2 mb-5 bg-info rounded text-secondary" id="sortida">
+        <p class="shadow-sm p-2 mb-3 bg-info rounded text-secondary" id="sortida">
           Lletres i la seva quantitat:
         </p>
       </blockquote>
     </div>
 
+    <!--Exercici 4-->
     <div class="alert alert-warning" role="alert">
       <p>Exercici 4.<br>Crea un altra array amb el teu cognom on cada posició correspongui a
         una lletra.
@@ -170,7 +174,7 @@
       </div>
       <br>
       <blockquote class="blockquote">
-        <p class="shadow-sm p-2 mb-5 bg-info rounded text-secondary" id="concaten">
+        <p class="shadow-sm p-2 mb-3 bg-info rounded text-secondary" id="concaten">
           Resultat de unió del nom i cognom.
         </p>
       </blockquote>
@@ -188,6 +192,8 @@
       </script>
     </div>
     <div>
+
+      <!--Nivell 2-->
       <div class="alert alert-warning" role="alert">
         <p>Nivell 2.<br>Crea una funció que retorni un array amb tots els email (sense repetir) del següent text:</p>
         <br>
@@ -202,10 +208,11 @@
             electrònic.</button>
         </div><br>
         <blockquote class="blockquote">
-          <p class="shadow-sm p-2 mb-5 bg-info rounded text-secondary" id="correus">
+          <p class="shadow-sm p-2 mb-3 bg-info rounded text-secondary" id="correus">
             Les adreces trobades són:
           </p>
         </blockquote>
+
         <script>
           function buscaMail() {
 
@@ -231,8 +238,6 @@
               }
             };
 
-
-
             // return trobat.slice(0, 3);
             senseRepes.reverse()
             for (const trobat of senseRepes) {
@@ -241,7 +246,7 @@
             }
 
             //console.log(buscaMail());
-          }
+          };
         </script>
 
       </div>
