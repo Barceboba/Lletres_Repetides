@@ -5,13 +5,12 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <title>Nivell 3</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-  <title>Nivell 3</title>
   <link href="css/nivell3.css" rel="stylesheet" type="text/css">
+  <script src="./js/nivell3.js"></script>
 </head>
 
 <body>
@@ -21,8 +20,8 @@
     <h3 class="text-secondary d-flex justify-content-center bg-primary text-justify">Crea una interfície gràfica amb
       botons que executi cadascun dels 5 exercicis anteriors.</h3><br>
 
-<!--Exercici 1-->
-    <div class="alert alert-warning" role="alert">
+    <!--Exercici 1-->
+    <div class="alert alert-warning mb-4" role="alert">
       <p>Exercici 1.<br> Crea un array amb el teu nom on cada posició correspongui
         a una lletra.
         Fes un bucle que recorri aquest array i mostri per consola cadascuna de les lletres.</p><br>
@@ -32,22 +31,13 @@
           aria-describedby="basic-addon1" id="nom">
         <div class="input-group-append">
           <button class="btn btn-success" type="button" onclick="separaLletres()" id="vista">Introduir un nom.</button>
-          <script>
-            function separaLletres() {
-              let captuNom = document.getElementById("nom").value;
-              let myWay = [...captuNom];
-              for (let i = 0; i < myWay.length; i++) {
-                //console.log(myWay[i]);
-              }
-              document.getElementById("alNom").innerHTML = "Les lletres que componen el nom són: " + myWay + ".";
-            }
-          </script>
+          
         </div>
       </div>
-    </div><br><br>
-    
+    </div>
+
     <!--Exercici 2-->
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-warning mb-4" role="alert">
       <p>Exercici 2.<br> Al bucle, si la lletra és una vocal imprimeix a la
         consola: ‘He trobat la VOCAL: __’. Sinó, imprimeix: ‘He trobat la CONSONTANT: __’.
         Si trobes un número, mostra per pantalla: ‘Els noms de persones no contenen el número: __’.</p><br>
@@ -58,30 +48,7 @@
         <div class="input-group-append">
           <button class="btn btn-success" type="button" onclick="contaLletres()" id="vista2">Introduir un nom.</button>
 
-          <script>
-            function contaLletres() {
-              let captuNom = document.getElementById("nom2").value.toUpperCase();
 
-              let myWay = [...captuNom];
-              let text = "";
-
-
-              for (let i = 0; i < myWay.length; i++) {
-                text += myWay[i];
-              }
-
-              for (i = 0; i < myWay.length; i++) {
-                if (myWay[i] == 'A' || myWay[i] == 'E' || myWay[i] == 'I' || myWay[i] == 'O' || myWay[i] == 'U') {
-                  document.getElementById("alVocal").innerHTML += '' + myWay[i] + ", ";
-                } else if (isNaN(myWay[i]) == false) {
-                  document.getElementById("noNum").innerHTML += '' + myWay[i] + ", ";
-                } else {
-                  document.getElementById("alCons").innerHTML += '' + myWay[i] + ", ";
-                }
-              }
-              document.getElementById("alNom").innerHTML = "Partim del nom " + text + ".";
-            }
-          </script>
         </div>
 
       </div><br>
@@ -108,7 +75,7 @@
     </div>
 
     <!--Exercic 3-->
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-warning mb-4" role="alert">
       <p>Exercici 3.<br>Emmagatzemar en un Map les lletres de l'array y el nombre
         de vegades que apareixen.</p><br>
       <div class="input-group">
@@ -120,31 +87,7 @@
       </div>
 
 
-      <script>
-        function contaLletr() {
-          let pillaNom = document.getElementById("nom3").value.toUpperCase();
-          let myWay = [...pillaNom];
-          let works = {};
-
-
-          let conta = myWay.map(men => {
-            if (works[men]) {
-              works[men] = works[men] + 1;
-            } else {
-              works[men] = 1;
-            }
-            return works;
-            // return conta = conta ? conta + 1 :1;
-          });
-          console.log(conta[0]);
-          //for para sacar por pantalla
-          for (const contar in works) {
-            if (Object.hasOwnProperty.call(works, contar)) {
-              document.getElementById("sortida").innerHTML += contar[0] + " : " + works[contar] + " , ";
-            }
-          }
-        }
-      </script><br>
+      <br>
       <blockquote class="blockquote">
         <p class="shadow-sm p-2 mb-3 bg-info rounded text-secondary" id="sortida">
           Lletres i la seva quantitat:
@@ -153,7 +96,7 @@
     </div>
 
     <!--Exercici 4-->
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-warning mb-4" role="alert">
       <p>Exercici 4.<br>Crea un altra array amb el teu cognom on cada posició correspongui a
         una lletra.
         Fusiona els dos arrays en un. A més, afegeix una posició amb un espai buit entre la primera i la segona. És a
@@ -178,21 +121,10 @@
           Resultat de unió del nom i cognom.
         </p>
       </blockquote>
-      <script>
-        function fussArray() {
-          let name = document.getElementById("nom4").value.toUpperCase();
 
-          surname = document.getElementById("nom5").value.toUpperCase(),
-            fullName = name.concat([' '], surname);
-
-          console.log(fullName);
-
-          document.getElementById("concaten").innerHTML = "Nom i cognom: " + fullName + ".";
-        }
-      </script>
     </div>
-    <div>
 
+    
       <!--Nivell 2-->
       <div class="alert alert-warning" role="alert">
         <p>Nivell 2.<br>Crea una funció que retorni un array amb tots els email (sense repetir) del següent text:</p>
@@ -213,46 +145,11 @@
           </p>
         </blockquote>
 
-        <script>
-          function buscaMail() {
-
-            document.getElementById("concaten").value = '';
-            let Str = document.getElementById('tirallonga').value;
-            let mails = /\w*-?\w*-[a-z]+@[a-z-]+(\w...)\.([a-zA-Z]+)/g;
-            let mailTrobat = [];
-            let trobat = Str.match(mails);
-            if (trobat) {
-              mailTrobat = trobat.sort();
-            } else if (trobat === null) {
-              document.getElementById("correus").innerHTML += "No hi ha cap adreça electrònica al text introduït.";
-            };
-
-            let senseRepes = [];
-            if (mailTrobat) {
-              for (let i = 0; i < mailTrobat.length; i++) {
-                if (mailTrobat[i + 1] != mailTrobat[i]) {
-                  senseRepes.push(mailTrobat[i]);
-                } else if (mailTrobat === null) {
-                  document.getElementById("correus").innerHTML += "No hi ha cap adreça electrònica al text introduït.";
-                }
-              }
-            };
-
-            // return trobat.slice(0, 3);
-            senseRepes.reverse()
-            for (const trobat of senseRepes) {
-              document.getElementById("correus").innerHTML += trobat + ' <br>';
-
-            }
-
-            //console.log(buscaMail());
-          };
-        </script>
 
       </div>
 
 
-    </div>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
